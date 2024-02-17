@@ -176,12 +176,12 @@ endgroup
 
 begingroup "Install wine64"
 pushd ${BUILDROOT}/wine64
-make -j$(sysctl -n hw.ncpu 2>/dev/null) install DESTDIR="${INSTALLROOT}/${WINE_INSTALLATION}"
+make -j$(sysctl -n hw.ncpu 2>/dev/null) install-lib DESTDIR="${INSTALLROOT}/${WINE_INSTALLATION}"
 popd
 endgroup
 
 begingroup "Install other dependencies"
-curl -L https://github.com/madewokherd/wine-mono/releases/download/wine-mono-8.1.0/wine-mono-8.1.0-x86.tar.xz --output mono.tar.xz
+curl -L https://github.com/madewokherd/wine-mono/releases/download/wine-mono-9.0.0/wine-mono-9.0.0-x86.tar.xz --output mono.tar.xz
 mkdir -p ${INSTALLROOT}/${WINE_INSTALLATION}/usr/local/share/wine/mono
 tar -xf mono.tar.xz -C ${INSTALLROOT}/${WINE_INSTALLATION}/usr/local/share/wine/mono
 
@@ -192,7 +192,7 @@ tar -xf mono.tar.xz -C ${INSTALLROOT}/${WINE_INSTALLATION}/usr/local/share/wine/
 
 begingroup "Tar Wine"
 pushd ${INSTALLROOT}/${WINE_INSTALLATION}/usr/local
-cp ./bin/wine ./bin/wine64
+# ln -s ./bin/wine ./bin/wine64
 tar -czvf ${WINE_INSTALLATION}.tar.gz ./
 popd
 endgroup
