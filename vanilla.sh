@@ -43,7 +43,6 @@ begingroup "Installing Dependencies"
 # build dependencies
 brew install \
     bison \
-    gcenx/wine/cx-llvm \
     mingw-w64 \
     pkgconfig \
     coreutils
@@ -57,7 +56,7 @@ brew install \
 
 endgroup
 
-export CC="$(brew --prefix cx-llvm)/bin/clang"
+export CC="/usr/bin/clang"
 export CXX="${CC}++"
 export BISON="$(brew --prefix bison)/bin/bison"
 
@@ -71,7 +70,7 @@ export LDFLAGS="-Wl,-rpath,@loader_path/../../"
 export MACOSX_DEPLOYMENT_TARGET=10.14
 
 # see https://github.com/Gcenx/macOS_Wine_builds/issues/17#issuecomment-750346843
-export CROSSCFLAGS="-s -O3"
+export CROSSCFLAGS="-O3"
 
 export SDL2_CFLAGS="-I$(brew --prefix sdl2)/include -I$(brew --prefix sdl2)/include/SDL2"
 export ac_cv_lib_soname_MoltenVK="libMoltenVK.dylib"
@@ -170,12 +169,12 @@ endgroup
 
 begingroup "Install wine64"
 pushd ${BUILDROOT}/wine64
-make install DESTDIR="${INSTALLROOT}/${WINE_INSTALLATION}"
+make install-lib DESTDIR="${INSTALLROOT}/${WINE_INSTALLATION}"
 popd
 endgroup
 
 begingroup "Install other dependencies"
-curl -L https://github.com/madewokherd/wine-mono/releases/download/wine-mono-7.4.0/wine-mono-7.4.0-x86.tar.xz --output mono.tar.xz
+curl -L https://github.com/madewokherd/wine-mono/releases/download/wine-mono-9.0.0/wine-mono-9.0.0-x86.tar.xz --output mono.tar.xz
 mkdir -p ${INSTALLROOT}/${WINE_INSTALLATION}/usr/local/share/wine/mono
 tar -xf mono.tar.xz -C ${INSTALLROOT}/${WINE_INSTALLATION}/usr/local/share/wine/mono
 
@@ -186,7 +185,6 @@ tar -xf mono.tar.xz -C ${INSTALLROOT}/${WINE_INSTALLATION}/usr/local/share/wine/
 
 begingroup "Tar Wine"
 pushd ${INSTALLROOT}/${WINE_INSTALLATION}/usr/local
-cp ./bin/wine ./bin/wine64
 tar -czvf ${WINE_INSTALLATION}.tar.gz ./
 popd
 endgroup
