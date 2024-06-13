@@ -163,7 +163,8 @@ endgroup
 
 begingroup "Build wine64"
 pushd ${BUILDROOT}/wine64
-make -j$(sysctl -n hw.ncpu 2>/dev/null)
+# make -j$(sysctl -n hw.ncpu 2>/dev/null)
+make -j$(sysctl -n hw.ncpu)
 popd
 endgroup
 
