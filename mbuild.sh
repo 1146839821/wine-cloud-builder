@@ -176,7 +176,7 @@ endgroup
 
 begingroup "Install wine64"
 pushd ${BUILDROOT}/wine64
-make -j$(sysctl -n hw.ncpu 2>/dev/null) install-lib DESTDIR="${INSTALLROOT}/${WINE_INSTALLATION}"
+make -sj$(sysctl -n hw.ncpu 2>/dev/null) install-lib DESTDIR="${INSTALLROOT}/${WINE_INSTALLATION}"
 popd
 endgroup
 
