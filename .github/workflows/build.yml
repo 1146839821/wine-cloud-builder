@@ -27,7 +27,7 @@ jobs:
       - name: Checkout wine
         uses: actions/checkout@v3
         with:
-          repository: 3Shain/winecx
+          repository: 1146839821/winecx
           path: sources/wine
       # - name: Checkout dxvk
       #   uses: actions/checkout@v3
