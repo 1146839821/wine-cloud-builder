@@ -111,41 +111,42 @@ begingroup "Configure wine64"
 mkdir -p ${BUILDROOT}/wine64
 pushd ${BUILDROOT}/wine64
 ${WINE_CONFIGURE} \
-    --disable-option-checking \
-    --enable-win64 \
-    --enable-archs=i386,x86_64 \
-    --disable-tests \
-    --without-alsa \
-    --without-capi \
-    --with-coreaudio \
-    --with-cups \
-    --without-dbus \
-    --without-fontconfig \
-    --with-freetype \
-    --with-gettext \
-    --without-gettextpo \
-    --without-gphoto \
-    --with-gnutls \
-    --without-gssapi \
-    --without-gstreamer \
-    --without-inotify \
-    --without-krb5 \
-    --with-mingw \
-    --without-netapi \
-    --with-opencl \
-    --with-opengl \
-    --without-oss \
-    --with-pcap \
-    --with-pthread \
-    --without-pulse \
-    --without-sane \
-    --with-sdl \
-    --without-udev \
-    --with-unwind \
-    --without-usb \
-    --without-v4l2 \
-    --with-vulkan \
-    --without-x
+        --disable-option-checking \
+        --disable-tests \
+        --enable-archs=i386,x86_64 \
+        --without-alsa \
+        --without-capi \
+        --with-coreaudio \
+        --with-cups \
+        --without-dbus \
+        --without-fontconfig \
+        --with-freetype \
+        --with-gettext \
+        --without-gettextpo \
+        --without-gphoto \
+        --with-gnutls \
+        --without-gssapi \
+        --with-gstreamer \
+        --with-inotify \
+        --without-krb5 \
+        --with-mingw \
+        --without-netapi \
+        --with-opencl \
+        --with-opengl \
+        --without-oss \
+        --with-pcap \
+        --with-pcsclite \
+        --with-pthread \
+        --without-pulse \
+        --without-sane \
+        --with-sdl \
+        --without-udev \
+        --with-unwind \
+        --without-usb \
+        --without-v4l2 \
+        --with-vulkan \
+        --without-wayland \
+        --without-x
 popd
 endgroup
 
