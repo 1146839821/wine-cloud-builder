@@ -114,8 +114,8 @@ cd MacPorts-2.10.1/
 make
 sudo make install
 
-
-git clone https://github.com/Gcenx/macports-wine.git /opt
+cd /opt
+git clone https://github.com/Gcenx/macports-wine.git
 
 sudo port -v sync
 
