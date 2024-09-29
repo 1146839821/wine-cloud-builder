@@ -112,12 +112,12 @@ tar xf MacPorts-2.10.1.tar.bz2
 cd MacPorts-2.10.1/
 ./configure
 make
-make install
+sudo make install
 
 
 git clone https://github.com/Gcenx/macports-wine.git /opt
 
-port -v sync
+sudo port -v sync
 
 begingroup "Configure wine64"
 mkdir -p ${BUILDROOT}/wine64
