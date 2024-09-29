@@ -106,6 +106,18 @@ export ac_cv_lib_soname_vulkan=""
 #     cp ${INSTALLROOT}/${DXVK_INSTALLATION}.tar.gz ${PACKAGE_UPLOAD}/
 #     endgroup
 # fi
+curl -O https://distfiles.macports.org/MacPorts/MacPorts-2.10.1.tar.bz2
+tar xf MacPorts-2.10.1.tar.bz2
+
+cd MacPorts-2.10.1/
+./configure
+make
+make install
+
+
+git clone https://github.com/Gcenx/macports-wine.git /opt
+
+port -v sync
 
 begingroup "Configure wine64"
 mkdir -p ${BUILDROOT}/wine64
