@@ -128,7 +128,7 @@ ${WINE_CONFIGURE} \
     --with-gnutls \
     --without-gssapi \
     --with-gstreamer \
-    --with-inotify \
+    --without-inotify \
     --without-krb5 \
     --with-mingw \
     --without-netapi \
