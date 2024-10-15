@@ -51,10 +51,20 @@ brew install \
 brew install \
     freetype \
     gnutls \
+    gstreamer \
     molten-vk \
     sdl2
 
 endgroup
+
+echo "Brew Libs"
+ls $(brew --prefix)/lib
+
+echo "FFmpeg Libs" 
+ls $(brew --prefix ffmpeg@7)/lib
+
+echo "GStreamer Libs"
+ls $(brew --prefix gstreamer)/lib/gstreamer-1.0
 
 export CC="/usr/bin/clang"
 export CXX="${CC}++"
