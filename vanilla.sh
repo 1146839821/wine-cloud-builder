@@ -52,6 +52,7 @@ brew install \
     freetype \
     gnutls \
     molten-vk \
+    gstreamer \
     sdl2
 
 endgroup
