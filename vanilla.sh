@@ -127,7 +127,7 @@ ${WINE_CONFIGURE} \
     --without-gphoto \
     --with-gnutls \
     --without-gssapi \
-    --without-gstreamer \
+    --with-gstreamer \
     --without-inotify \
     --without-krb5 \
     --with-mingw \
