@@ -45,7 +45,8 @@ brew install \
     bison \
     mingw-w64 \
     pkgconfig \
-    coreutils
+    coreutils \
+    ffmpeg@7
 
 # runtime dependencies for crossover-wine
 brew install \
