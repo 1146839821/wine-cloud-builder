@@ -15,7 +15,13 @@ endgroup() {
     printtag "endgroup"
 }
 
-sh $GITHUB_WORKSPACE/sources/wine/autogen.sh
+
+$GITHUB_WORKSPACE/sources/wine/tools/make_requests
+$GITHUB_WORKSPACE/sources/wine/tools/make_specfiles
+$GITHUB_WORKSPACE/sources/wine/dlls/winevulkan/make_vulkan -x vk.xml -X video.xml
+autoreconf -ifv
+rm -rf autom4te.cache
+
 export GITHUB_WORKSPACE=$(pwd)
 
 # directories / files inside the downloaded tar file directory structure
