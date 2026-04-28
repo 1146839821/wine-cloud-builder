@@ -128,7 +128,6 @@ pushd ${BUILDROOT}/wine64
 ${WINE_CONFIGURE} \
     --disable-option-checking \
     --enable-win64 \
-    --enable-archs=i386,x86_64 \
     --disable-tests \
     --without-alsa \
     --without-capi \
