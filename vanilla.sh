@@ -15,6 +15,7 @@ endgroup() {
     printtag "endgroup"
 }
 
+sh $GITHUB_WORKSPACE/sources/wine/autogen.sh
 export GITHUB_WORKSPACE=$(pwd)
 
 # directories / files inside the downloaded tar file directory structure
