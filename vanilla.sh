@@ -16,11 +16,8 @@ endgroup() {
 }
 
 
-$GITHUB_WORKSPACE/sources/wine/tools/make_requests
-$GITHUB_WORKSPACE/sources/wine/tools/make_specfiles
-$GITHUB_WORKSPACE/sources/wine/dlls/winevulkan/make_vulkan -x vk.xml -X video.xml
-autoreconf -ifv
-rm -rf autom4te.cache
+cd $GITHUB_WORKSPACE/sources/wine
+sh autogen.sh
 
 export GITHUB_WORKSPACE=$(pwd)
 
