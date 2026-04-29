@@ -16,22 +16,15 @@ endgroup() {
 }
 
 
-cd $GITHUB_WORKSPACE/sources/wine
+export WINE_SOURCE_DIR=$GITHUB_WORKSPACE/sources/wine
+cd $WINE_SOURCE_DIR
 sh autogen.sh
 
-export GITHUB_WORKSPACE=$(pwd)
-
-# directories / files inside the downloaded tar file directory structure
-export WINE_CONFIGURE=$GITHUB_WORKSPACE/sources/wine/configure
-# export DXVK_BUILDSCRIPT=$GITHUB_WORKSPACE/sources/dxvk/package-release.sh
-# build directories
+export WINE_CONFIGURE=$WINE_SOURCE_DIR/configure
 export BUILDROOT=$GITHUB_WORKSPACE/build
-# target directory for installation
 export INSTALLROOT=$GITHUB_WORKSPACE/install
 export PACKAGE_UPLOAD=$GITHUB_WORKSPACE/upload
-# artifact names
 export WINE_INSTALLATION=wine
-# export DXVK_INSTALLATION=dxvk
 
 # Need to ensure Instel brew actually exists
 if ! command -v "/usr/local/bin/brew" &>/dev/null; then
