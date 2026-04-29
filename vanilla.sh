@@ -185,7 +185,7 @@ popd
 endgroup
 
 begingroup "Install other dependencies"
-curl -L https://github.com/madewokherd/wine-mono/releases/download/wine-mono-9.0.0/wine-mono-9.0.0-x86.tar.xz --output mono.tar.xz
+curl -L https://github.com/wine-mono/wine-mono/releases/download/wine-mono-11.1.0/wine-mono-11.1.0-x86.tar.xz --output mono.tar.xz
 mkdir -p ${INSTALLROOT}/${WINE_INSTALLATION}/usr/local/share/wine/mono
 tar -xf mono.tar.xz -C ${INSTALLROOT}/${WINE_INSTALLATION}/usr/local/share/wine/mono
 
