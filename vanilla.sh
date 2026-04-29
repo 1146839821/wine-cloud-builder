@@ -140,6 +140,8 @@ ${WINE_CONFIGURE} \
     --with-mingw \
     --without-netapi \
     --without-opencl \
+    --disable-amd_ags \
+    --disable-amd_ags_x64 \
     --with-opengl \
     --without-oss \
     --with-pcap \
