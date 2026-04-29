@@ -139,7 +139,7 @@ ${WINE_CONFIGURE} \
     --without-krb5 \
     --with-mingw \
     --without-netapi \
-    --without-opencl
+    --without-opencl \
     --with-opengl \
     --without-oss \
     --with-pcap \
