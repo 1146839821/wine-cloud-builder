@@ -143,7 +143,7 @@ ${WINE_CONFIGURE} \
     --without-opencl \
     --disable-amd_ags \
     --disable-amd_ags_x64 \
-    --without-opengl
+    --without-opengl \
     --without-oss \
     --with-pcap \
     --with-pthread \
