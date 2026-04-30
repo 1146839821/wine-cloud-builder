@@ -154,7 +154,8 @@ ${WINE_CONFIGURE} \
     --with-unwind \
     --without-usb \
     --without-v4l2 \
-    --with-vulkan 
+    --with-vulkan \
+    --without-x
 popd
 endgroup
 
