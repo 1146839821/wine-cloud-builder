@@ -121,6 +121,7 @@ pushd ${BUILDROOT}/wine64
 ${WINE_CONFIGURE} \
     --disable-option-checking \
     --enable-win64 \
+    --enable-archs=i386,x86_64 \
     --disable-tests \
     --without-alsa \
     --without-capi \
@@ -154,7 +155,6 @@ ${WINE_CONFIGURE} \
     --without-usb \
     --without-v4l2 \
     --with-vulkan \
-    --without-x
 popd
 endgroup
 
@@ -189,10 +189,10 @@ curl -L https://github.com/wine-mono/wine-mono/releases/download/wine-mono-11.1.
 mkdir -p ${INSTALLROOT}/${WINE_INSTALLATION}/usr/local/share/wine/mono
 tar -xf mono.tar.xz -C ${INSTALLROOT}/${WINE_INSTALLATION}/usr/local/share/wine/mono
 
-# curl -L https://github.com/The-Wineskin-Project/MoltenVK/releases/download/v1.2.3/macos-1.2.3-pr1678-UE4hack-Wideline-zeroinit.tar.xz --output mvk.tar.xz
-# tar -xf mvk.tar.xz
-# cp ./Package/Release/MoltenVK/dylib/macOS/libMoltenVK.dylib ${INSTALLROOT}/${WINE_INSTALLATION}/usr/local/lib/libMoltenVK.dylib
-# endgroup
+ curl -L https://github.com/KhronosGroup/MoltenVK/releases/download/v1.4.1/MoltenVK-macos.tar --output mvk.tar
+ tar -xf mvk.tar
+ cp ./Package/Release/MoltenVK/dylib/macOS/libMoltenVK.dylib ${INSTALLROOT}/${WINE_INSTALLATION}/usr/local/lib/libMoltenVK.dylib
+ endgroup
 
 begingroup "Tar Wine"
 pushd ${INSTALLROOT}/${WINE_INSTALLATION}/usr/local
