@@ -190,9 +190,7 @@ curl -L https://github.com/wine-mono/wine-mono/releases/download/wine-mono-11.1.
 mkdir -p ${INSTALLROOT}/${WINE_INSTALLATION}/usr/local/share/wine/mono
 tar -xf mono.tar.xz -C ${INSTALLROOT}/${WINE_INSTALLATION}/usr/local/share/wine/mono
 
-curl -L https://github.com/KhronosGroup/MoltenVK/releases/download/v1.4.1/MoltenVK-macos.tar --output mvk.tar
-tar -xf mvk.tar
-cp ./MoltenVK/dynamic/dylib/macOS/libMoltenVK.dylib ${INSTALLROOT}/${WINE_INSTALLATION}/usr/local/lib/libMoltenVK.dylib
+
 endgroup
 
 begingroup "Tar Wine"
